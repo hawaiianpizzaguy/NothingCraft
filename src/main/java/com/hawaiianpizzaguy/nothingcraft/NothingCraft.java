@@ -4,6 +4,8 @@ import com.hawaiianpizzaguy.nothingcraft.client.proxy.ClientProxy;
 import com.hawaiianpizzaguy.nothingcraft.common.blocks.GreenStoneBlock;
 import com.hawaiianpizzaguy.nothingcraft.common.blocks.ModBlocks;
 import com.hawaiianpizzaguy.nothingcraft.common.proxy.CommonProxy;
+import com.hawaiianpizzaguy.nothingcraft.reference.Names;
+import com.hawaiianpizzaguy.nothingcraft.reference.Reference;
 import com.hawaiianpizzaguy.nothingcraft.setup.IProxy;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
@@ -17,7 +19,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Mod("nothingcraft")
+@Mod(Reference.MOD_ID)
 public class NothingCraft {
 
     public static IProxy proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new CommonProxy());
@@ -47,7 +49,7 @@ public class NothingCraft {
         @SubscribeEvent
         public static void onItemRegistry(final RegistryEvent.Register<Item> event) {
 
-            event.getRegistry().register(new BlockItem(ModBlocks.GREENSTONEBLOCK, new Item.Properties()).setRegistryName("greenstoneblock"));
+            event.getRegistry().register(new BlockItem(ModBlocks.GREENSTONEBLOCK, new Item.Properties()).setRegistryName(Names.Blocks.greenstoneblock));
 
         }
 

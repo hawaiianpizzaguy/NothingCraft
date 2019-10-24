@@ -2,7 +2,7 @@
 
   "variants": {
 
-    "": { "model": "nothingcraft:blocks/greenstoneblock" }
+    "": { "model": "nothingcraft:block/greenstoneblock" }
 
   }
 
