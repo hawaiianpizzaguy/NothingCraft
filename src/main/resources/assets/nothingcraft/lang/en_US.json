@@ -1,11 +1,12 @@
 {
+  "_comment": "Blocks",
   "block.nothingcraft.greenstoneblock": "Green Stone Block",
 
 
-
+  "_comment": "Items",
   "item.nothingcraft.encodedbookitem": "Encoded Book",
-
   "item.nothingcraft.greenstoneitem": "Green Stone",
 
-  "itemGroup.nothingcraft": "Nothingcraft"
+  "_comment": "Creative Tab",
+  "itemGroup.nothingcraft": "Nothing Craft"
 }
