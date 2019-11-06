@@ -8,4 +8,7 @@ public class ModBlocks {
     @ObjectHolder(Names.BlocksObjHolder.greenstoneblock_obj)
     public static GreenStoneBlock GREENSTONEBLOCK;
 
+    @ObjectHolder(Names.BlocksObjHolder.greenstoneore_obj)
+    public static GreenStoneOre GREENSTONEORE;
+
 }

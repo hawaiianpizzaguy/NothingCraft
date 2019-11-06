@@ -2,9 +2,11 @@ package com.hawaiianpizzaguy.nothingcraft;
 
 import com.hawaiianpizzaguy.nothingcraft.client.proxy.ClientProxy;
 import com.hawaiianpizzaguy.nothingcraft.common.blocks.GreenStoneBlock;
+import com.hawaiianpizzaguy.nothingcraft.common.blocks.GreenStoneOre;
 import com.hawaiianpizzaguy.nothingcraft.common.blocks.ModBlocks;
 import com.hawaiianpizzaguy.nothingcraft.common.items.GreenStoneItem;
 import com.hawaiianpizzaguy.nothingcraft.common.proxy.CommonProxy;
+import com.hawaiianpizzaguy.nothingcraft.common.world.OreGeneration;
 import com.hawaiianpizzaguy.nothingcraft.reference.Names;
 import com.hawaiianpizzaguy.nothingcraft.reference.Reference;
 import com.hawaiianpizzaguy.nothingcraft.setup.IProxy;
@@ -21,7 +23,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-//TODO ore or mob drop for green stone, new texture for green stone block so I can use the core texture for the core
 //TODO add core tile entity and gui with custom model, and write encryption code
 //TODO link encryption code to core for encrypting written and maybe signed books
 
@@ -31,6 +32,7 @@ public class NothingCraft {
     public static IProxy proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new CommonProxy());
 
     public static ModSetup setup = new ModSetup();
+    public static OreGeneration oregen = new OreGeneration();
 
     private static final Logger LOGGER = LogManager.getLogger();
 
@@ -44,6 +46,7 @@ public class NothingCraft {
 
         setup.init();
         proxy.init();
+        oregen.init();
 
     }
 
@@ -54,6 +57,7 @@ public class NothingCraft {
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
 
             event.getRegistry().register(new GreenStoneBlock());
+            event.getRegistry().register(new GreenStoneOre());
 
         }
 
@@ -64,6 +68,7 @@ public class NothingCraft {
                     .group(setup.itemGroup);
 
             event.getRegistry().register(new BlockItem(ModBlocks.GREENSTONEBLOCK, properties).setRegistryName(Names.Blocks.greenstoneblock));
+            event.getRegistry().register(new BlockItem(ModBlocks.GREENSTONEORE, properties).setRegistryName(Names.Blocks.greenstoneore));
             event.getRegistry().register(new GreenStoneItem());
 
         }
